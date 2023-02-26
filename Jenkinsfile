@@ -1,7 +1,7 @@
 pipeline {
 
 	agent {
-			 lable any
+			 any
 			 custemWorkspace "/mnt/sagar"
 			
 	} 
