@@ -1,8 +1,7 @@
 pipeline {
 
 	agent any
-	custemWorkspace {"/mnt/sagar" }
-	
+
 	stages {
 	
 	stage('install-apache') {
