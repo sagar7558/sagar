@@ -1,7 +1,7 @@
 pipeline {
 
 	agent any
-			 custemWorkspace "/mnt/sagar" 
+	custemWorkspace {"/mnt/sagar" }
 	
 	stages {
 	
