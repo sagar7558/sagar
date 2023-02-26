@@ -1,17 +1,39 @@
 pipeline {
 
-	agent any
-		stages{
+	agent {
+			 lable any
+			 custemWorkspace "/mnt/sagar"
+			
+	} 
+	
+	stages {
+	
+	stage('install-apache') {
 
-			stage ('Hello') {
-		steps {
-		
-				echo "Hello all welcome to Athrv Birthday"
-		
-				}	
-						
-			}
-		
-		}
+	steps {
+
+		sh "yum install httpd -y"
 
 	}
+	}
+	
+	stage('diploy-index') {
+
+	steps {
+
+		sh "cp -r dev.html /var/www/html"
+		sh "chmod -R 777 /var/www/html"
+
+	}
+	}
+	
+	stage('restart-apache') {
+
+	steps {
+
+		sh "systemctl restart httpd"
+
+	}
+	}
+}
+}
